@@ -1,0 +1,29 @@
+<% 
+ text = "This is some long sample text.It includes line breaks \n
+ and double-line breaks.\n\n It rambles on and on and on.\n\n
+ Until we get to this last line."
+%>
+
+<h2>word_wrap</h2>
+<%= word_wrap(text, :line_width => 30) %>
+<hr />
+
+<h2>simple_format</h2>
+<%= simple_format(text) %>
+<hr />
+
+<h2>simple_format + word_wrap </h2>
+<%= simple_format(word_wrap(text, :line_width => 30)) %>
+<hr />
+
+<h2>truncate</h2>
+<%= truncate(text, :length =>40, :omssion => "...") %>
+<hr />
+
+<h2>excert</h2>
+<%= excerpt(text, 'includes', :radius => 7, :omission => "...") %>
+<hr/>
+
+<h2>Highlight</h2>
+  <%= highlight(text, 'sample text') %>
+<hr />

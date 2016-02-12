@@ -1,0 +1,33 @@
+ <% @page_title = "Admin_users_list" %>
+
+   <%= link_to("<<Back to Menu",{:controller => :access,:action => :index},:class => 'back-link') %>
+
+      <div class ="user index">
+       <h2> Admin Users</h2>
+   <%=link_to("Add New User",{:action => :new},:class => 'action new') %>
+
+ <div> <%= pluralize(@admin_users.size,'admin_user') %> found </div>
+
+  <table class="listing" summary = "Admin Users list" >
+   <tr>
+     <th>Username </th>
+     <th>Name </th>
+     <th>email </th>
+     <th>Actions</th>
+  </tr>
+    <% @admin_users.each do |admin_user| %>
+     <tr class="<%=cycle("odd","even") %>">
+      <td><%= admin_user.username %></td>
+      <td><%= admin_user.name %></td>
+      <td><%= mail_to(admin_user.email) %></td>
+      <td class ="actions">
+        <%= link_to("show",{:action => :show,:id=> admin_user.id}, :class => 'action show') %>
+        <%= link_to("Edit",{:action => 'edit',:id => admin_user.id},:class => 'action edit') %>
+       <%= link_to("delete",{:action => 'delete',:id => admin_user.id},:class => 'action delete') %>
+    </td>
+  </tr>
+ <% end %>
+</table>
+</div>
+  <%= will_paginate @admin_users %>
+

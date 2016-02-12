@@ -1,0 +1,39 @@
+
+<%= error_messages_for(@section) %>
+
+<table summary= "creatin Section " %>
+
+   <tr>
+   	<td><%= f.label :name %></td>
+   	<td><%= f.text_field :name %></td>
+   </tr>
+   <tr>
+      <td><%= f.label :page_id %></td>
+      <td><%= f.select(:page_id,@pages.map{|p| [p.name,p.id]}) %></td>
+   </tr>
+
+   <tr>
+   	<td><%= f.label :Position %></td>
+   	<td><%= f.select(:position,1..@section_count) %></td>
+   </tr>
+
+   <tr>
+   	<td><%= f.label :Visible? %></td>
+   	<td><%= f.check_box :visible %></td>
+   </tr>
+
+   <tr>
+      <td><%= f.label :ContentType %></td>
+      <td>
+        <%= f.radio_button :content_type, 'text' %> Text
+        <%= f.radio_button :content_type, 'HTML' %> Html
+      </td>
+   </tr>
+
+   <tr>
+      <td><%= f.label :Content %></td>
+      <td><%= f.text_area(:content, :width => 40, :height => 20) %></td>
+   </tr>
+
+
+</table>

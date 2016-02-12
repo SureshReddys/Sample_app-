@@ -1,0 +1,35 @@
+
+
+
+<div class="subjects index">
+  <h2>Subjects List</h2>
+  
+  <%#= @subject_count.to_s + " subjects found" %>
+
+  <%= link_to(image_tag('plus_sign.png', :width => 11, :height => 11, :alt => '+') + "Add New Subject",{:action => :new},  :class => 'action new') %>
+     <div><%= pluralize(@subjects.size,'subjects') %> found </div>
+  
+    <table class="listing" summary="subjects List">
+       <tr class="header">
+          <th>&nbsp;</th>
+          <th class= "center">Subject</th>
+          <th class= "center">Visible</th>
+          <th class= "center">Pages</th>
+          <th class= "center">Actions</th>
+       </tr>
+        <% @subjects.each do |subject| %>
+            <tr>
+               <td><%= subject.position %></td>
+               <td class="center"><%= subject.name %></td>
+               <td class="center"><%= status_tag(subject.visible) %></td>
+               <td class="center"><%= subject.pages.size %></td>
+               <td class="actions">
+                <%= link_to(" view pages",{:controller => 'pages',:subject_id => subject.id}, :class => 'action index') %>
+                 <%= link_to("show",{:action => :show,:id=> subject.id}, :class => 'action show') %>
+                 <%= link_to("Edit",{:action => :edit,:id=> subject.id}, :class => 'action edit') %>
+                 <%= link_to("Delete",{:action => :delete, :id=> subject.id}, :class => 'action delete',confirm: "Are you sure?" ) %>
+               </td>
+            </tr>
+        <% end %>
+    </table>
+</div>

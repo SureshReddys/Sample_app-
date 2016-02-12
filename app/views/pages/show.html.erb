@@ -1,0 +1,37 @@
+
+<%= link_to("<<Back to index",{:action=>:index,:subject_id => @subject.id}, :class=>"action index") %>
+
+  <div class ="pagess show" >
+  	<h2>Show pages</h2>
+
+<table summary="pages detail view ">
+
+
+   	 <table summary= "show page " %>
+         <tr>
+   	        <td>Name</td>
+   	        <td><%= @page.name %></td>
+   	      </tr>
+
+   	      <tr>
+   	        <td>Position</td>
+   	        <td><%= @page.position %></td>
+   	       </tr>
+
+   	        <tr>
+   	        	<td>Visible?</td>
+   	        	<td><%= @page.visible ? 'true' : 'False' %></td>
+            </tr>
+
+            <tr>
+            	<td>Permalink</td>
+            	<td><%= @page.permalink %></td>
+            </tr>
+
+            <tr>
+            	<td>Subject Id</td>
+            	<td><%= @page.subject_id %></td>
+            </tr>
+     </table>
+
+ </div>

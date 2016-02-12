@@ -1,0 +1,27 @@
+
+<p> Demos/hello</p>
+
+<h1> ROR Application</h1>
+
+<br />
+
+<%= 1+1 %>
+
+<% target = "world" %><br />
+
+ <%= "Hello#{target}" %>
+
+ <% @array.each do |n| %> <br />
+ <%= n %> 
+
+<% end %> <br />
+
+
+id :<%= @id %> <br />
+Page:<%= @page %> <br />
+
+Next Page :<%= @page.to_i + 1 %>
+
+<hr />
+
+<%= params.inspect %>

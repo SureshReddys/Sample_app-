@@ -1,0 +1,26 @@
+<h1>Demos#index</h1>
+<p>Find me in app/views/demos/index.html.erb</p>
+
+<%#= Time.now  + 30.days - 23.minutes %> <br />
+
+<%= Time.now %> <br />
+<br />
+
+<%= Time.now.strftime("%B %d,%Y %H:%M") %>
+
+<br />
+<%= link_to 'heelo_page', :action=>:hello %> <br/>
+
+<%= link_to 'hello_page2', :action => :hello,:id=>20,:page=>5 %> <br />
+
+
+
+<%= link_to("Roar", '#'  ,:onclick => "jsRoar('Javascript'); return true;") %>
+
+<%#= javascript_tag("jsRoar('Rails');") %>
+
+<%= javascript_tag("jsRoar('Rails');") %>
+
+
+
+

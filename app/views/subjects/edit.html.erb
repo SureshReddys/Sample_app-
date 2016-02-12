@@ -1,0 +1,18 @@
+
+<%= link_to("<<Back to lsit",{:action => :index},:class =>  'action index') %>
+
+ <div class="subjects Update">
+ 	<h2>Update subject</h2>
+
+ 	<%= form_for :subject, url: { action: "update",:id => @subject.id } do |f| %>
+
+         <%= render(:partial => "form", :locals => {:f => f}) %>
+
+ 	    <div class="form-buttons">
+ 	    	<%= submit_tag("update subjects") %>
+ 	    </div>
+
+ 
+    <% end %>
+
+ </div>

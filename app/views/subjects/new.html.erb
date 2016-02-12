@@ -1,0 +1,16 @@
+<%= link_to("<<Back to list",{:action => :index},:class =>  'action index') %>
+
+ <div class="subjects new">
+ 	<h2>Create subject</h2>
+
+ 	<%= form_for(:subject, :url => { :action => "create" }) do |f| %>
+
+          <%= render(:partial => "form", :locals => {:f => f}) %>
+
+ 	    <div class="form-buttons">
+ 	    	<%= submit_tag("create subjects") %>
+ 	    </div>
+
+    <% end %>
+
+ </div>
