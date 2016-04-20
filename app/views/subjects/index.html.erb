@@ -6,7 +6,8 @@
   
   <%#= @subject_count.to_s + " subjects found" %>
 
-  <%= link_to(image_tag('plus_sign.png', :width => 11, :height => 11, :alt => '+') + "Add New Subject",{:action => :new},  :class => 'action new') %>
+  <%= link_to(image_tag('plus_sign.png', :width => 11, :height => 11, :alt => '+') + "Add New Subject",{:action => :new},:class => 'action new') %>
+  
      <div><%= pluralize(@subjects.size,'subjects') %> found </div>
   
     <table class="listing" summary="subjects List">

@@ -4,8 +4,7 @@ class PagesController < ApplicationController
    before_action :find_subject
 
   def index
-
-    #@pages = Page.sorted
+     #@pages = Page.sorted
     @pages = @subject.pages.sorted
   end
 
@@ -48,7 +47,7 @@ class PagesController < ApplicationController
         else
               @subjects = Subject.order('position Asc')
               @page_count = Page.count
-          render 'edit'
+               render 'edit'
       end
 
   end

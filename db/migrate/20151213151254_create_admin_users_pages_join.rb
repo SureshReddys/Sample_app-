@@ -1,5 +1,5 @@
 class CreateAdminUsersPagesJoin < ActiveRecord::Migration
-  def change
+  def up
     create_table :admin_users_pages, :id=>false do |t|
     	t.integer :admin_user_id
     	t.integer :page_id
